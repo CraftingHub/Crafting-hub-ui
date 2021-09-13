@@ -1,7 +1,14 @@
+import React from 'react';
+import Routing from './routes/routing'
+import { ChakraProvider } from "@chakra-ui/react"
+
+
 
 function App() {
   return (
-    <p>Hello losers</p>
+     <ChakraProvider>
+       <Routing />
+     </ChakraProvider>
   );
 }
 
