@@ -5,6 +5,7 @@ import {
   } from "react-router-dom";
   
 import LandingPage from "../pages/LandingPage";
+import LoginPage from "../pages/authentication/LoginPage";
 import NotFound from "../pages/NotFound"
 
 
@@ -13,6 +14,7 @@ function Routing() {
       <BrowserRouter>
           <Switch>
               <Route exact path="/" component={LandingPage} />
+              <Route path="/login" component={LoginPage} />
               <Route component={NotFound} />
           </Switch>
       </BrowserRouter>

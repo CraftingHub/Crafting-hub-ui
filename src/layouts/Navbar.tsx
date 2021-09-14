@@ -76,7 +76,7 @@ import SwitchMode from './SwitchMode';
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'#'}>
+              href={'/login'}>
               Sign In
             </Button>
             <Button
