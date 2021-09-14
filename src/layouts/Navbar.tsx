@@ -103,9 +103,9 @@ import SwitchMode from './SwitchMode';
   
   const DesktopNav = () => {
     const linkColor = useColorModeValue('gray.600', 'gray.200');
-    const linkHoverColor = useColorModeValue('gray.800', 'white');
-    const linkHoverBgColor = useColorModeValue('orange.100', 'white');
-    const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+    const linkHoverColor = useColorModeValue('gray.800', { light: 'gray.300', dark: 'gray.600' });
+    const linkHoverBgColor = useColorModeValue('orange.100', { light: 'gray.300', dark: 'gray.600' });
+    const popoverContentBgColor = useColorModeValue({ light: 'gray.300', dark: 'gray.600' }, 'gray.800');
   
     return (
       <Stack direction={'row'} spacing={4}>
