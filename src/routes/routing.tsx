@@ -9,6 +9,7 @@ import {
   } from "react-router-dom";
 import { Spinner } from "@chakra-ui/react"
 import NavBar from "../layouts/Navbar";
+import Footer from '../components/home/Footer';
 
 
 const Loadable = (Component: any) => (props: any) => {
@@ -22,7 +23,7 @@ const Loadable = (Component: any) => (props: any) => {
       fallback={
         <Spinner
           thickness="4px"
-          speed="0.65s"
+          speed="4s"
           emptyColor="gray.200"
           color="orange.500"
           size="xl"
@@ -61,6 +62,7 @@ const DefaultContainer = () => (
     <NavBar/>
     <Route exact path="/" component={LandingPage} />
     <Route component={NotFound} />
+    <Footer/>
   </div>
 )
 
