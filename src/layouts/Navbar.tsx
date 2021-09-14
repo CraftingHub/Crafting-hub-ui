@@ -22,7 +22,7 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
   
-  export default function WithSubnavigation() {
+  export default function NavBar() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -101,6 +101,7 @@ import {
   const DesktopNav = () => {
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
+    const linkHoverBgColor = useColorModeValue('orange.100', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
@@ -113,11 +114,13 @@ import {
                   p={2}
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
+                  borderRadius={'md'}
                   fontWeight={500}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,
+                    backgroundColor: linkHoverBgColor
                   }}>
                   {navItem.label}
                 </Link>
@@ -182,6 +185,7 @@ import {
   const MobileNav = () => {
     return (
       <Stack
+
         bg={useColorModeValue('white', 'gray.800')}
         p={4}
         display={{ md: 'none' }}>
