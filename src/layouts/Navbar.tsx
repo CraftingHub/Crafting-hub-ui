@@ -81,11 +81,12 @@ import SwitchMode from './SwitchMode';
             </Button>
             <Button
               // display={{ base: 'none', md: 'inline-flex' }}
+              as={'a'}
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
               bg={'orange.400'}
-              href={'#'}
+              href={'/register'}
               _hover={{
                 bg: 'orange.300',
               }}>
