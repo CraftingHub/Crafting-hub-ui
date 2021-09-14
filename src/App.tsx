@@ -1,13 +1,12 @@
-import React from 'react';
 import Routing from './routes/routing'
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 import Navbar from  './layouts/Navbar'
-
-
+import theme from './theme'
 
 function App() {
   return (
-     <ChakraProvider>
+     <ChakraProvider theme={theme}>
+       <CSSReset />
        <Navbar/>
        <Routing />
      </ChakraProvider>
