@@ -1,18 +1,45 @@
 
-// import { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import {
     BrowserRouter,
     Switch,
     Route,
     Redirect,
-    // useLocation
+    useLocation
   } from "react-router-dom";
-  
-import LandingPage from "../pages/LandingPage";
-import LoginPage from "../pages/authentication/LoginPage";
-import NotFound from "../pages/NotFound"
+import { Spinner } from "@chakra-ui/react"
 import NavBar from "../layouts/Navbar";
-import RegisterPage from "../pages/authentication/RegisterPage";
+
+
+const Loadable = (Component: any) => (props: any) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { pathname } = useLocation();
+  // eslint-disable-next-line 
+  const isDashboard = pathname.includes('/dashboard');
+
+  return (
+    <Suspense
+      fallback={
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="orange.500"
+          size="xl"
+          sx={{
+            top: 0,
+            left: 0,
+            width: 1,
+            zIndex: 9999,
+            position: 'fixed'
+          }}
+        />
+      }
+    >
+      <Component {...props} />
+    </Suspense>
+  );
+};
 
 
 const LoginContainer = () => (
@@ -51,3 +78,8 @@ function Routing() {
 
 
 export default Routing;
+
+const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
+const LoginPage = Loadable(lazy(() => import("../pages/authentication/LoginPage")));
+const RegisterPage = Loadable(lazy(() => import("../pages/authentication/RegisterPage")));
+const NotFound = Loadable(lazy(() => import("../pages/NotFound")));
