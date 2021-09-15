@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+[![CI/CD](https://github.com/CraftingHub/Crafting-hub-ui/actions/workflows/node.js.yml/badge.svg)](https://github.com/CraftingHub/Crafting-hub-ui/actions/workflows/node.js.yml)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 you can check the live version deployed on netlify : https://craftinghub.netlify.app/
