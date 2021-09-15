@@ -61,7 +61,6 @@ const DefaultContainer = () => (
   <div className="container">
     <NavBar/>
     <Route exact path="/" component={LandingPage} />
-    <Route component={NotFound} />
     <Footer/>
   </div>
 )
@@ -72,7 +71,8 @@ function Routing() {
           <Switch>
             <Route exact path="/(login)" component={LoginContainer}/>
             <Route exact path="/(register)" component={RegisterContainer}/>
-            <Route component={DefaultContainer}/>
+            <Route exact path="/" component={DefaultContainer}/>
+            <Route path="*" component={NotFound} />
           </Switch>
       </BrowserRouter>
     )
